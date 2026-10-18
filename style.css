@@ -127,7 +127,7 @@ body {
 
     width: 77%;
     min-height: 260px;
-    margin: 20px auto;
+    margin: 20px auto 10px;
     background-color: #16121E;
     color: #02DC39;
     padding: 0 15px;
@@ -273,12 +273,12 @@ body {
 /* ------------- secondry ------------- */
 .secondry {
     width: 77%;
-    margin: 20px auto;
-    height: 200px;
+    margin: 10px auto;
+    height: 240px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 25% 50% 25%;
-    gap: 10px;
+    grid-template-rows: 20% 55% 25%;
+    gap: 6px;
 }
 
 .buttons {
@@ -292,6 +292,8 @@ body {
     display: inline-block;
     justify-content: left;
     align-items: center;
+    font-family: 'Inter', sans-serif;
+
     gap: 10px;
     background-color: #16121E;
     border: 1px solid #1C2026;
@@ -312,6 +314,118 @@ body {
 
 }
 
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
+
+}
+
+.card {
+    background-color: #16121E;
+    border: 1px solid #1C2026;
+    border-left: 4px solid var(--side-color);
+    border-radius: 15px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px) rotate(2deg);
+    /* border-color: var(--side-color);
+    box-shadow: 0 0 12px var(--side-color); */
+    border-color: #02DC39;
+}
+
+
+#card1 {
+    border-left: 4px solid #02DC39;
+}
+
+
+.critical {
+    --priority-color: #8E1E3F;
+    --priority-bg: #27121B;
+    --side-color: #02DC39;
+}
+
+.high {
+    --priority-color: #DCA500;
+    --priority-bg: rgba(220, 165, 0, 0.15);
+    --side-color: #DCA500;
+}
+
+.medium {
+    --priority-color: #02DC39;
+    --priority-bg: rgba(2, 220, 57, 0.15);
+    --side-color: #02DC39;
+}
+
+
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-priority {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--priority-color);
+    border: 2px solid var(--priority-color);
+    border-radius: 5px;
+    background-color: var(--priority-bg);
+    padding: 5px;
+}
+
+.card-status {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #777484;
+}
+
+.card h3 {
+    color: rgb(219, 218, 218);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    margin: 15px 0 15px;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 7px;
+    background-color: #1C2026;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: var(--progress);
+    background-color: #02DC39;
+    border-radius: inherit;
+}
+
+.progress-percent {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #02DC39;
+}
+
 
 
 
@@ -327,12 +441,13 @@ body {
     border: 2px solid #8E1E3F;
     border-radius: 5px;
 
-position: relative;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease;
 }
+
 .threat-detect:hover {
     background-color: rgba(185, 58, 96, 0.3);
     transform: scale(1.02);
