@@ -25,7 +25,8 @@ body {
     font-size: 15px;
     font-family: 'Share Tech Mono', monospace;
 }
-.header:hover{
+
+.header:hover {
     box-shadow: 0 0 5px #048223,
         0 0 15px rgba(3, 110, 29, 0.5);
 }
@@ -261,8 +262,54 @@ body {
     margin: 3px 0 0;
 }
 
-.main:hover{
+.main:hover {
     border-color: #016119;
 }
 
 /* ------------- end of main/radar ------------- */
+
+
+
+/* ------------- secondry ------------- */
+.secondry {
+    width: 77%;
+    margin: 20px auto;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 50% 25%;
+    gap: 10px;
+}
+
+.buttons {
+    grid-row: 1;
+    height: 100%;
+    justify-self: start;
+
+}
+
+.btn {
+    display: inline-block;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    background-color: #16121E;
+    border: 1px solid #1C2026;
+    border-radius: 25px;
+    color: rgb(219, 218, 218);
+    padding: 15px;
+    transition: background-color 0.3s ease,
+        border-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+
+}
+
+
+.btn:hover {
+    background-color: rgba(2, 220, 57, 0.15);
+    border-color: #5CFF80;
+        transform: translateY(-3px);
+
+}
+
+/* ------------- end of secondry ------------- */
