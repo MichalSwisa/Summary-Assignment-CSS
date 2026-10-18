@@ -3,6 +3,9 @@ body {
     margin: 0;
 }
 
+
+/* ------------- header ------------- */
+
 .header {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -20,8 +23,12 @@ body {
 
 .header p {
     font-size: 15px;
+    font-family: 'Share Tech Mono', monospace;
 }
-
+.header:hover{
+    box-shadow: 0 0 5px #048223,
+        0 0 15px rgba(3, 110, 29, 0.5);
+}
 
 .sheild-icon {
     background-color: #02DC39;
@@ -41,7 +48,7 @@ body {
 .sheild-icon:hover {
     transform: scale(1.15);
     box-shadow: 0 0 12px #02DC39,
-                0 0 25px rgba(2, 220, 57, 0.5);
+        0 0 25px rgba(2, 220, 57, 0.5);
 }
 
 .sheild-icon i {
@@ -71,7 +78,7 @@ body {
     border-radius: 13px;
 
     transition: background-color 0.3s ease,
-                border-color 0.3s ease;
+        border-color 0.3s ease;
     cursor: pointer;
 
 }
@@ -97,7 +104,9 @@ body {
 }
 
 @keyframes blink {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
     }
 
@@ -106,3 +115,154 @@ body {
     }
 }
 
+/* ------------- end of header ------------- */
+
+
+
+
+/* ------------- main/radar ------------- */
+
+.main {
+
+    width: 77%;
+    min-height: 260px;
+    margin: 20px auto;
+    background-color: #16121E;
+    color: #02DC39;
+    padding: 0 15px;
+    text-align: center;
+    border: 1px solid #1C2026;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    /* gap: 25%; */
+
+}
+
+
+
+
+.radar {
+    position: relative;
+    grid-column: 1;
+    justify-self: start;
+
+    overflow: hidden;
+
+    width: 235px;
+    height: 235px;
+    border-radius: 50%;
+    border: 2px solid #02DC39;
+    box-sizing: border-box;
+
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.5),
+        inset 0 0 0 1px hsla(0, 0%, 100%, 0.15);
+    background:
+        linear-gradient(transparent 49.75%, #0e4c42 0 50.25%, transparent 0),
+        linear-gradient(90deg, transparent 49.75%, #0e4c42 0 50.25%, transparent 0);
+    /* linear-gradient(#333, #111); */
+
+    /* background-size: 100%, 218px 218px, 218px 218px, 100%; */
+}
+
+
+.sweep {
+    position: absolute;
+    box-sizing: border-box;
+
+    top: 0;
+    left: 0;
+
+    width: 50%;
+    height: 50%;
+
+    border-right: solid 1px hsla(145, 50%, 40%, .3);
+    border-radius: 100% 0 0 0;
+
+    transform-origin: 100% 100%;
+
+    background: linear-gradient(50deg,
+            rgba(34, 34, 34, 0) 56%,
+            hsla(145, 50%, 40%, 1));
+
+    animation: sweep 5s infinite linear;
+}
+
+
+
+
+
+@keyframes sweep {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.radar-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #02DC39;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #02DC39,
+        0 0 6px rgba(5, 234, 62, 0.5),
+        0 0 12px rgba(2, 220, 57, 0.5),
+        0 0 20px rgba(2, 220, 57, 0.2);
+}
+
+#dot1 {
+    top: 30%;
+    left: 60%;
+
+}
+
+
+#dot2 {
+    top: 50%;
+    left: 40%;
+
+}
+
+#dot3 {
+    top: 70%;
+    left: 80%;
+
+}
+
+
+
+.radar-info {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 15px;
+}
+
+
+.radar-info-item h2 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 26px;
+    font-weight: 400;
+    color: #02DC39;
+    margin: 0;
+}
+
+.radar-info-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    color: #777484;
+    margin: 3px 0 0;
+}
+
+.main:hover{
+    border-color: #016119;
+}
+
+/* ------------- end of main/radar ------------- */
